@@ -1,5 +1,5 @@
 id,name,age,blood_group,gender,experience,designation
-1,"Sharif",25,"B+","male",1.5,"Jr Software Engineer"
+1,"Sharif",NaN,"B+","male",1.5,"Jr Software Engineer"
 2,"Kanan Mahmud",28,NaN,"Male",7.5,"Sr Software Engineer"
 3,"Md. Shakil",27,"B-","Male",4.5,"Software Engineer"
 4,"Imran Sheikh",25,"B-","Male",1.8,"Jr Software Engineer"

@@ -1,40 +1,26 @@
 import pandas as pd
 
-data = [
-   {
-    'name': 'Sharif',
-    'age': 23,
-    'blood_group': 'B+',
-    'gender':'male',
-     },
-    {
-        'name': 'Arif',
-        'age': 32,
-        'blood_group': 'B-'
-    },
-    {
-        'name': 'Imran',
-        'age': 25,
-        'blood_group': 'AB-'
-    }
-]
-df = pd.DataFrame(data)
-df['HasBike'] = False
-df.head()
-print(df)
+data = pd.read_csv('datasets/person.csv')
+data_head = data.head(4)
+data_tail = data.tail(4)
+print(data_head)
+print('############################# tail data #######################')
+print(data_tail)
+selected_column = ['id', 'name', 'age', 'experience','designation']
+new_df = data[selected_column]
+data_head =new_df.head()
+#print(data_head)
+#print(new_df.dtypes)
+print("Working")
+new_columns = {
+    'id':'ID',
+    'name':'NAME',
+    'age':'AGE',
+    'experience':'EXPERIANCE',
+    'designation':'DESIGNATION',
+}
+new_df = new_df.rename(columns = new_columns)
+print(new_df.columns)
 
-df.drop('HasBike', inplace=True, axis=1)
-print(df.head())
-data = {'Name':['Tom', 'nick', 'krish', 'jack'],
-        'Age':[20, 21, 19, 18]}
-
-# Create DataFrame
-df = pd.DataFrame(data)
-print(df)
-
-# data = pd.read_csv('datasets/person.csv')
-# data_head = data.head(4)
-# data_tail = data.tail(4)
-# print(data_head)
-# print('############################# tail data #######################')
-# print(data_tail)
+print(new_df.describe())
+print(new_df.head(4).isnull())
